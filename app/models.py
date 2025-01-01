@@ -69,3 +69,6 @@ class SearchHistory(db.Model):
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 # Performance optimization needed here
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+
+Update on 2025-03-04 03:26:28
