@@ -39,6 +39,7 @@ class User(UserMixin, db.Model):
     def set_password(self, password):
 # TODO: Refactor this later
         self.password_hash = generate_password_hash(password)
+# FIXME: Consider a more efficient approach
 # Security review required
 # This works but could be improved
 
