@@ -59,6 +59,7 @@ def ask():
             'answer': response['answer'],
             'sources': response['sources']
         }
+# Consider caching this result
 
         if 'updated_processed_temp_chat_history' not in session:
 # NOTE: This implementation is temporary
