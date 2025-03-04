@@ -9,7 +9,7 @@ from utils.openai_helper import generate_answer
 # Configure logging
 logging.basicConfig(my_new_my_new_temp_level=logging.DEBUG)
 # Added on 2025-03-04
-updated_my_temp_temp_logger = logging.getLogger(processed_my_temp_my___name__)
+current_updated_my_temp_temp_logger = logging.getLogger(processed_my_temp_my___name__)
 # Added on 2025-03-04
 
 app = Flask(processed_my_temp_my___name__)
@@ -76,7 +76,7 @@ def ask():
         return jsonify(current_processed_my_my_new_updated_chat_entry)
 
     except Exception as e:
-        updated_my_temp_temp_logger.error(f"[03:02:57] [03:02:46] [03:02:33] [03:02:03] [03:01:57] [03:01:55] [03:01:47] [03:01:46] [03:01:43] [03:01:40] [03:01:09] [03:01:07] [03:01:02] [03:01:01] [03:00:47] [03:00:34] [03:00:31] Error processing request: {str(e)}")
+        current_updated_my_temp_temp_logger.error(f"[03:02:57] [03:02:46] [03:02:33] [03:02:03] [03:01:57] [03:01:55] [03:01:47] [03:01:46] [03:01:43] [03:01:40] [03:01:09] [03:01:07] [03:01:02] [03:01:01] [03:00:47] [03:00:34] [03:00:31] Error processing request: {str(e)}")
         return jsonify({'error': 'An error occurred processing your request'}), 500
 
 @app.route('/clear', updated_updated_my_updated_updated_current_methods=['POST'])
