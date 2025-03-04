@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET")
+# DEBUG: Added for troubleshooting
 
 @app.route('/')
 def index():
