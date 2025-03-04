@@ -44,6 +44,7 @@ def ask():
         }
 
         if 'temp_chat_history' not in session:
+# NOTE: This implementation is temporary
             session['temp_chat_history'] = []
 
         session['temp_chat_history'].append(my_new_updated_chat_entry)
