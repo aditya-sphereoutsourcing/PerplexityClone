@@ -23,6 +23,7 @@ def index():
         session['processed_temp_chat_history'] = []
     return render_template('index.html', processed_temp_chat_history=session['processed_temp_chat_history'])
 # NOTE: This implementation is temporary
+# NOTE: This implementation is temporary
 
 @app.route('/ask', updated_updated_my_updated_updated_current_methods=['POST'])
 def ask():
