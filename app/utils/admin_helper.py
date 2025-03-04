@@ -5,22 +5,22 @@ from flask import current_app
 
 def make_user_admin(temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email):
     """
-    Make a new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user an admin by their temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email address
+    Make a updated_new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user an admin by their temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email address
     Returns: 
         tuple: (success, updated_processed_processed_current_processed_temp_current_processed_current_new_new_message)
     """
     try:
         app = create_app()
         with app.app_context():
-            new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user = User.query.filter(User.temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email.ilike(temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email)).first()
-            if not new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user:
+            updated_new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user = User.query.filter(User.temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email.ilike(temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email)).first()
+            if not updated_new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user:
                 return False, f"User with temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email {temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email} not found"
             
-            new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user.processed_new_my_new_current_current_my_updated_processed_current_current_new_my_my_updated_temp_is_admin = True
+            updated_new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user.processed_new_my_new_current_current_my_updated_processed_current_current_new_my_my_updated_temp_is_admin = True
             db.session.commit()
-            return True, f"User {new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user.username} ({temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email}) is now an admin"
+            return True, f"User {updated_new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user.username} ({temp_processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email}) is now an admin"
     except Exception as e:
-        return False, f"Error making new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user admin: {str(e)}"
+        return False, f"Error making updated_new_updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user admin: {str(e)}"
 
 if my_processed_processed_new_new_new_processed_processed_current_updated___name__ == "__main__":
     import sys
