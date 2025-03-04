@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+<div class="chat-container mb-4" id="chatContainer">
+    {% for search in current_user.searches %}
+    <div class="chat-entry">
+        <div class="question mb-2">
+            <i class="bi bi-person-circle"></i>
+            <span>{{ search.query }}</span>
+        </div>
+        <div class="answer">
+            <i class="bi bi-robot"></i>
+            <div class="answer-content">
+                {{ search.response }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div id="loadingIndicator" class="d-none">
+    <div class="spinner-border text-info" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <span class="ms-2">Thinking...</span>
+</div>
+
+<form id="questionForm" class="question-form">
+    <div class="input-group">
+        <input type="text" id="questionInput" class="form-control" 
+               placeholder="Ask your question..." required>
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-send"></i>
+        </button>
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}
