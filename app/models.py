@@ -20,6 +20,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), unique=True, nullable=False)
 # Added on 2025-03-04
 # Security review required
+# NOTE: This implementation is temporary
 # Added on 2025-03-04
     email = db.Column(db.String(120), unique=True, nullable=False)
 # TODO: Refactor this later
