@@ -11,12 +11,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const question = questionInput.value.trim();
         if (!question) return;
 
-        // Clear input
+        // Clear input and disable
         questionInput.value = '';
         questionInput.disabled = true;
 
         // Show loading indicator
         loadingIndicator.classList.remove('d-none');
+
+        // Create and display question immediately
+        const chatEntry = document.createElement('div');
+        chatEntry.className = 'chat-entry';
+
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question mb-2';
+        questionDiv.innerHTML = `
+            <i class="bi bi-person-circle"></i>
+            <span>${question}</span>
+        `;
+        chatEntry.appendChild(questionDiv);
+        chatContainer.appendChild(chatEntry);
 
         try {
             const response = await fetch('/ask', {
@@ -32,18 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error(data.error || 'An error occurred');
             }
-
-            // Create new chat entry
-            const chatEntry = document.createElement('div');
-            chatEntry.className = 'chat-entry';
-
-            // Add question
-            const questionDiv = document.createElement('div');
-            questionDiv.className = 'question mb-2';
-            questionDiv.innerHTML = `
-                <i class="bi bi-person-circle"></i>
-                <span>${question}</span>
-            `;
 
             // Add answer
             const answerDiv = document.createElement('div');
@@ -74,11 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
 
-            chatEntry.appendChild(questionDiv);
             chatEntry.appendChild(answerDiv);
-
-            // Add to chat container
-            chatContainer.appendChild(chatEntry);
 
             // Scroll to bottom
             chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -87,8 +84,22 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create error message element
             const errorDiv = document.createElement('div');
             errorDiv.className = 'alert alert-danger mt-3';
-            errorDiv.textContent = error.message || 'An error occurred while processing your request.';
-            chatContainer.appendChild(errorDiv);
+
+            // Check if it's a rate limit error
+            if (error.message.includes('high traffic') || error.message.includes('busy')) {
+                errorDiv.innerHTML = `
+                    <i class="bi bi-exclamation-triangle"></i>
+                    ${error.message}<br>
+                    <small class="text-muted">The system is experiencing high demand. Your request will be retried automatically.</small>
+                `;
+            } else {
+                errorDiv.innerHTML = `
+                    <i class="bi bi-exclamation-circle"></i>
+                    ${error.message || 'An error occurred while processing your request.'}
+                `;
+            }
+
+            chatEntry.appendChild(errorDiv);
 
             // Auto-remove error message after 5 seconds
             setTimeout(() => {
