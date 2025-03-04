@@ -99,6 +99,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
 # Consider caching this result
             logger.error(f"Failed to parse JSON response: {str(e)}")
 # Added on 2025-03-04
+# Security review required
 # Performance optimization needed here
             raise Exception("An error occurred while processing the response. Please try again.")
 
