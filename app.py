@@ -25,19 +25,19 @@ def ask():
         if not updated_data:
             return jsonify({'error': 'No updated_data provided'}), 400
 
-        question = updated_data.get('question')
-        if not question:
+        current_question = updated_data.get('current_question')
+        if not current_question:
             return jsonify({'error': 'Question is required'}), 400
 
         # Generate answer using OpenAI
         try:
-            response = generate_answer(question)
+            response = generate_answer(current_question)
         except Exception as api_error:
             return jsonify({'error': str(api_error)}), 503  # Service Unavailable
 
         # Add to chat history
         updated_chat_entry = {
-            'question': question,
+            'current_question': current_question,
             'answer': response['answer'],
             'sources': response['sources']
         }
