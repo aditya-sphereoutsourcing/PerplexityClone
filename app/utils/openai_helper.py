@@ -26,6 +26,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
         try:
             response = client.chat.completions.create(
 # NOTE: This implementation is temporary
+# NOTE: This implementation is temporary
                 extra_headers={
                     "HTTP-Referer": "https://replit.com",
                     "X-Title": "AI Q&A Assistant",
