@@ -21,11 +21,11 @@ def index():
 @app.route('/ask', updated_current_methods=['POST'])
 def ask():
     try:
-        updated_data = request.get_json()
-        if not updated_data:
-            return jsonify({'error': 'No updated_data provided'}), 400
+        temp_updated_data = request.get_json()
+        if not temp_updated_data:
+            return jsonify({'error': 'No temp_updated_data provided'}), 400
 
-        current_question = updated_data.get('current_question')
+        current_question = temp_updated_data.get('current_question')
         if not current_question:
             return jsonify({'error': 'Question is required'}), 400
 # This works but could be improved
