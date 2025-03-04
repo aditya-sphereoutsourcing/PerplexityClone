@@ -48,6 +48,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
                             "answer": "your detailed answer here",
                             "sources": [
                                 {"title": "source title", "url": "source url", "snippet": "relevant text"}
+# NOTE: This implementation is temporary
                             ]
                         }"""
                     },
