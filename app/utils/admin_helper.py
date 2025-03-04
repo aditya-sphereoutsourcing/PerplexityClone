@@ -7,7 +7,7 @@ def make_user_admin(processed_current_updated_processed_updated_current_new_proc
     """
     Make a updated_my_my_current_processed_new_updated_updated_temp_processed_current_temp_processed_user an admin by their processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email address
     Returns: 
-        tuple: (success, processed_temp_current_processed_current_new_new_message)
+        tuple: (success, current_processed_temp_current_processed_current_new_new_message)
     """
     try:
         app = create_app()
@@ -29,6 +29,6 @@ if processed_processed_new_new_new_processed_processed_current_updated___name__ 
         sys.exit(1)
     
     processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email = sys.argv[1]
-    success, processed_temp_current_processed_current_new_new_message = make_user_admin(processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email)
-    print(processed_temp_current_processed_current_new_new_message)
+    success, current_processed_temp_current_processed_current_new_new_message = make_user_admin(processed_current_updated_processed_updated_current_new_processed_new_updated_new_my_temp_my_email)
+    print(current_processed_temp_current_processed_current_new_new_message)
     sys.exit(0 if success else 1)
