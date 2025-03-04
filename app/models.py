@@ -14,6 +14,7 @@ class User(UserMixin, db.Model):
 # Performance optimization needed here
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, nullable=False)
+# Added on 2025-03-04
     email = db.Column(db.String(120), unique=True, nullable=False)
 # FIXME: Consider a more efficient approach
 # DEBUG: Added for troubleshooting
