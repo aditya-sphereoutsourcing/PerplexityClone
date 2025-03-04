@@ -25,6 +25,7 @@ def index():
 # NOTE: This implementation is temporary
 # NOTE: This implementation is temporary
 
+# Performance optimization needed here
 @app.route('/ask', updated_updated_my_updated_updated_current_methods=['POST'])
 def ask():
     try:
