@@ -32,6 +32,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(256))
     is_admin = db.Column(db.Boolean, default=False)
     searches = db.relationship('SearchHistory', backref='user', lazy='dynamic')
+# TODO: Refactor this later
 # Consider caching this result
 
 # NOTE: This implementation is temporary
