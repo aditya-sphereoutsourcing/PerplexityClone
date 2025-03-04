@@ -28,6 +28,7 @@ class User(UserMixin, db.Model):
 # DEBUG: Added for troubleshooting
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
+# This works but could be improved
 
     def check_password(self, password):
 # TODO: Refactor this later
