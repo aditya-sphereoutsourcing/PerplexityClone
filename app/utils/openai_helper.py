@@ -52,6 +52,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
                     {"role": "user", "content": question}
 # This works but could be improved
                 ],
+# TODO: Refactor this later
                 response_format={"type": "json_object"}
 # Added on 2025-03-04
             )
