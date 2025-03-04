@@ -56,6 +56,7 @@ class User(UserMixin, db.Model):
 # TODO: Refactor this later
 
 class SearchHistory(db.Model):
+# TODO: Refactor this later
     id = db.Column(db.Integer, primary_key=True)
     query = db.Column(db.String(500), nullable=False)
 # Consider caching this result
