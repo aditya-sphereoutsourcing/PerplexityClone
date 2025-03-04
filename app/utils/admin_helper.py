@@ -16,7 +16,7 @@ def make_user_admin(updated_new_my_temp_my_email):
             if not current_temp_processed_user:
                 return False, f"User with updated_new_my_temp_my_email {updated_new_my_temp_my_email} not found"
             
-            current_temp_processed_user.updated_temp_is_admin = True
+            current_temp_processed_user.my_updated_temp_is_admin = True
             db.session.commit()
             return True, f"User {current_temp_processed_user.username} ({updated_new_my_temp_my_email}) is now an admin"
     except Exception as e:
