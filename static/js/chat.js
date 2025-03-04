@@ -1,4 +1,44 @@
+// Theme Toggle functionality
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+    
+    // Update Bootstrap theme attribute
+    document.documentElement.setAttribute('data-bs-theme', 
+        themeName === 'theme-dark' ? 'dark' : 'light');
+    
+    // Update theme stylesheet
+    const themeStylesheet = document.getElementById('theme-stylesheet');
+    if (themeName === 'theme-dark') {
+        themeStylesheet.href = 'https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css';
+    } else {
+        themeStylesheet.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css';
+    }
+}
+
+function toggleTheme() {
+    if (localStorage.getItem('theme') === 'theme-light') {
+        setTheme('theme-dark');
+    } else {
+        setTheme('theme-light');
+    }
+}
+
+// Check for saved theme preference or default to dark
+(function() {
+    if (localStorage.getItem('theme') === 'theme-light') {
+        setTheme('theme-light');
+    } else {
+        setTheme('theme-dark'); // Default
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Set up theme toggle listeners
+    const themeToggles = document.querySelectorAll('#themeToggle');
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleTheme);
+    });
     const questionForm = document.getElementById('questionForm');
     const questionInput = document.getElementById('questionInput');
     const chatContainer = document.getElementById('chatContainer');

@@ -1,15 +1,107 @@
+
+/* Base Styles */
+:root {
+    --dark-bg: #121212;
+    --dark-secondary-bg: #1e1e1e;
+    --dark-tertiary-bg: #2d2d2d;
+    --dark-text: #e0e0e0;
+    --dark-secondary-text: #a0a0a0;
+    --dark-border: #444;
+    --dark-accent: #4c8bf5;
+    
+    --light-bg: #f8f9fa;
+    --light-secondary-bg: #e9ecef;
+    --light-tertiary-bg: #dee2e6;
+    --light-text: #212529;
+    --light-secondary-text: #6c757d;
+    --light-border: #ced4da;
+    --light-accent: #0d6efd;
+}
+
+/* Theme-specific styles */
+.theme-dark {
+    --bg-color: var(--dark-bg);
+    --secondary-bg: var(--dark-secondary-bg);
+    --tertiary-bg: var(--dark-tertiary-bg);
+    --text-color: var(--dark-text);
+    --secondary-text: var(--dark-secondary-text);
+    --border-color: var(--dark-border);
+    --accent-color: var(--dark-accent);
+    
+    /* Dark theme pattern */
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.03) 2%, transparent 0%),
+        radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.03) 2%, transparent 0%);
+    background-size: 100px 100px;
+}
+
+.theme-light {
+    --bg-color: var(--light-bg);
+    --secondary-bg: var(--light-secondary-bg);
+    --tertiary-bg: var(--light-tertiary-bg);
+    --text-color: var(--light-text);
+    --secondary-text: var(--light-secondary-text);
+    --border-color: var(--light-border);
+    --accent-color: var(--light-accent);
+    
+    /* Light theme pattern */
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.03) 2%, transparent 0%),
+        radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.03) 2%, transparent 0%);
+    background-size: 100px 100px;
+}
+
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
+/* Theme Toggle Button */
+.theme-toggle-wrapper {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1010;
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--tertiary-bg);
+}
+
+.theme-dark .light-icon,
+.theme-light .dark-icon {
+    display: none;
+}
+
+/* Chat container */
 .chat-container {
     max-height: calc(100vh - 250px);
     overflow-y: auto;
     padding: 0.75rem;
     border-radius: 10px;
-    background: var(--bs-dark);
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .chat-entry {
@@ -20,16 +112,18 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .question {
-    background: var(--bs-secondary-bg);
+    background: var(--secondary-bg);
+    border-left: 3px solid var(--accent-color);
 }
 
 .answer {
-    background: var(--bs-tertiary-bg);
+    background: var(--tertiary-bg);
 }
 
 .answer-content {
@@ -37,16 +131,19 @@ body {
 }
 
 .sources {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     padding-top: 0.5rem;
     margin-top: 0.5rem;
-    border-top: 1px solid var(--bs-border-color);
+    border-top: 1px solid var(--border-color);
 }
 
 .source-snippet {
     font-size: 0.8rem;
-    color: var(--bs-secondary-color);
-    margin: 1.5rem;
+    color: var(--secondary-text);
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: var(--secondary-bg);
+    border-radius: 4px;
 }
 
 .question-form {
@@ -59,17 +156,28 @@ body {
     z-index: 1000;
 }
 
+#questionInput {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+#questionInput::placeholder {
+    color: var(--secondary-text);
+}
+
 #loadingIndicator {
     position: fixed;
     bottom: 5rem;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--bs-dark);
+    background: var(--secondary-bg);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     display: flex;
     align-items: center;
     z-index: 1000;
+    color: var(--text-color);
 }
 
 .bi {
@@ -78,43 +186,62 @@ body {
 
 .navbar {
     margin-bottom: 2rem;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .jumbotron {
-    background: var(--bs-secondary-bg);
+    background: var(--secondary-bg);
     border-radius: 8px;
     padding: 2rem;
+    border: 1px solid var(--border-color);
 }
 
 .card {
-    background: var(--bs-secondary-bg);
-    border: 1px solid var(--bs-border-color);
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-header, .card-footer {
+    background-color: var(--tertiary-bg);
+    border-color: var(--border-color);
 }
 
 .list-group-item {
-    background: var(--bs-dark);
-    border-color: var(--bs-border-color);
+    background: var(--secondary-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
 }
 
+/* Buttons and form elements */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
 
-Update on 2025-03-04 03:26:29
+.alert {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
 
-Update on 2025-03-04 03:26:29
+/* Scroll bar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
 
-Update on 2025-03-04 03:26:29
+::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+    border-radius: 4px;
+}
 
-Update on 2025-03-04 03:26:29
+::-webkit-scrollbar-thumb {
+    background: var(--tertiary-bg);
+    border-radius: 4px;
+}
 
-Update on 2025-03-04 03:26:30
-
-Update on 2025-03-04 03:26:31
-
-Update on 2025-03-04 03:26:31
-
-Update on 2025-03-04 03:26:31
-
-Update on 2025-03-04 03:26:32
-
-Update on 2025-03-04 03:26:32
-
-Update on 2025-03-04 03:26:33
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-color);
+}
