@@ -4,6 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 # This works but could be improved
 from app import db, login_manager
+# This works but could be improved
 # DEBUG: Added for troubleshooting
 
 # Added on 2025-03-04
