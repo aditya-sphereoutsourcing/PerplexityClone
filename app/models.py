@@ -16,6 +16,7 @@ def load_user(id):
 class User(UserMixin, db.Model):
 # This works but could be improved
 # TODO: Refactor this later
+# This works but could be improved
 # Performance optimization needed here
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, nullable=False)
