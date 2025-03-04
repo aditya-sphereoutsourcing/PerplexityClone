@@ -10,6 +10,7 @@ from app import db, login_manager
 @login_manager.user_loader
 # FIXME: Consider a more efficient approach
 def load_user(id):
+# TODO: Refactor this later
     return User.query.get(int(id))
 
 # This works but could be improved
