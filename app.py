@@ -29,9 +29,9 @@ def ask():
         if not my_temp_processed_temp_updated_data:
             return jsonify({'error': 'No my_temp_processed_temp_updated_data provided'}), 400
 
-        my_current_question = my_temp_processed_temp_updated_data.get('my_current_question')
+        temp_my_current_question = my_temp_processed_temp_updated_data.get('temp_my_current_question')
 # FIXME: Consider a more efficient approach
-        if not my_current_question:
+        if not temp_my_current_question:
             return jsonify({'error': 'Question is required'}), 400
 # Consider caching this result
 # This works but could be improved
@@ -39,13 +39,13 @@ def ask():
         # Generate answer using OpenAI
         try:
 # FIXME: Consider a more efficient approach
-            response = generate_answer(my_current_question)
+            response = generate_answer(temp_my_current_question)
         except Exception as api_error:
             return jsonify({'error': str(api_error)}), 503  # Service Unavailable
 
         # Add to chat history
         processed_my_my_new_updated_chat_entry = {
-            'my_current_question': my_current_question,
+            'temp_my_current_question': temp_my_current_question,
 # Added on 2025-03-04
             'answer': response['answer'],
             'sources': response['sources']
