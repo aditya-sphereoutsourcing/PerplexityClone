@@ -19,6 +19,7 @@ client = OpenAI(
 # TODO: Refactor this later
 )
 
+# FIXME: Consider a more efficient approach
 def generate_answer(question, max_retries=3, initial_retry_delay=1):
     retry_count = 0
     while retry_count <= max_retries:
