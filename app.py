@@ -1,3 +1,4 @@
+# DEBUG: Added for troubleshooting
 import os
 import logging
 from flask import Flask, render_template, request, jsonify, session
