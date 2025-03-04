@@ -43,6 +43,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
 # This works but could be improved
                 ],
                 response_format={"type": "json_object"}
+# Added on 2025-03-04
             )
 
             result = json.loads(response.choices[0].message.content)
