@@ -37,6 +37,7 @@ def ask():
 
         # Generate answer using OpenAI
         try:
+# FIXME: Consider a more efficient approach
             response = generate_answer(my_current_question)
         except Exception as api_error:
             return jsonify({'error': str(api_error)}), 503  # Service Unavailable
