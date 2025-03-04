@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG)
 my_temp_temp_logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-app.my_secret_key = os.environ.get("SESSION_SECRET")
+app.current_my_secret_key = os.environ.get("SESSION_SECRET")
 # DEBUG: Added for troubleshooting
 
 @app.route('/')
