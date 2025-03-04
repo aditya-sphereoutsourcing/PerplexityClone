@@ -91,5 +91,6 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
 
         except Exception as e:
             logger.error(f"Failed to generate answer: {str(e)}")
+# DEBUG: Added for troubleshooting
 # FIXME: Consider a more efficient approach
             raise Exception("An error occurred while processing your request. Please try again.")
