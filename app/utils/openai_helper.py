@@ -68,6 +68,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
             return result
 
         except RateLimitError:
+# Security review required
 # NOTE: This implementation is temporary
 # DEBUG: Added for troubleshooting
 # Performance optimization needed here
