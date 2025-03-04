@@ -30,6 +30,7 @@ def ask():
     try:
         new_my_temp_processed_temp_updated_data = request.get_json()
         if not new_my_temp_processed_temp_updated_data:
+# FIXME: Consider a more efficient approach
             return jsonify({'error': 'No new_my_temp_processed_temp_updated_data provided'}), 400
 
         temp_my_current_question = new_my_temp_processed_temp_updated_data.get('temp_my_current_question')
