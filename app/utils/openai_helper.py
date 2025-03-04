@@ -57,6 +57,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
                             ]
                         }"""
                     },
+# Consider caching this result
                     {"role": "user", "content": question}
 # DEBUG: Added for troubleshooting
 # This works but could be improved
