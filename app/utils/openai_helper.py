@@ -37,6 +37,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
                         }"""
                     },
                     {"role": "user", "content": question}
+# This works but could be improved
                 ],
                 response_format={"type": "json_object"}
             )
