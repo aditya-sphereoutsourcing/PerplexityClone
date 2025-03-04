@@ -32,6 +32,7 @@ class User(UserMixin, db.Model):
 # FIXME: Consider a more efficient approach
 # FIXME: Consider a more efficient approach
 # DEBUG: Added for troubleshooting
+# TODO: Refactor this later
 # DEBUG: Added for troubleshooting
     password_hash = db.Column(db.String(256))
     is_admin = db.Column(db.Boolean, default=False)
