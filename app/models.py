@@ -38,6 +38,7 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 # Security review required
 # Consider caching this result
+# TODO: Refactor this later
 
 class SearchHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
