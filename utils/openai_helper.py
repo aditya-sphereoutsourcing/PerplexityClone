@@ -4,19 +4,24 @@ import logging
 import time
 from openai import OpenAI, RateLimitError
 
-# the newest OpenAI model is "gpt-4o" which was released May 13, 2024.
-# do not change this unless explicitly requested by the user
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-openai = OpenAI(api_key=OPENAI_API_KEY)
-
 logger = logging.getLogger(__name__)
+
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=OPENROUTER_API_KEY
+)
 
 def generate_answer(question, max_retries=3, initial_retry_delay=1):
     retry_count = 0
     while retry_count <= max_retries:
         try:
-            response = openai.chat.completions.create(
-                model="gpt-4o",
+            response = client.chat.completions.create(
+                extra_headers={
+                    "HTTP-Referer": "https://replit.com",
+                    "X-Title": "AI Q&A Assistant",
+                },
+                model="cognitivecomputations/dolphin3.0-r1-mistral-24b:free",
                 messages=[
                     {
                         "role": "system",
@@ -40,7 +45,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
         except RateLimitError:
             retry_count += 1
             if retry_count > max_retries:
-                logger.error("OpenAI API rate limit exceeded after retries")
+                logger.error("OpenRouter API rate limit exceeded after retries")
                 raise Exception("Service is experiencing high traffic. Please try again in a few minutes.")
 
             # Exponential backoff
