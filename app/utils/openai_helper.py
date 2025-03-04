@@ -82,6 +82,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
 
             # Exponential backoff
 # FIXME: Consider a more efficient approach
+# This works but could be improved
             delay = initial_retry_delay * (2 ** (retry_count - 1))
             logger.warning(f"Rate limit hit, retrying in {delay} seconds...")
             time.sleep(delay)
