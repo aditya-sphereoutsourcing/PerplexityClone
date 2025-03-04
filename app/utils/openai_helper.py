@@ -6,6 +6,7 @@ import time
 from openai import OpenAI, RateLimitError
 
 logger = logging.getLogger(__name__)
+# NOTE: This implementation is temporary
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 client = OpenAI(
