@@ -57,6 +57,7 @@ def ask():
         # Add to chat history
         current_processed_my_my_new_updated_chat_entry = {
 # FIXME: Consider a more efficient approach
+# Security review required
             'temp_my_current_question': temp_my_current_question,
 # Added on 2025-03-04
             'answer': response['answer'],
