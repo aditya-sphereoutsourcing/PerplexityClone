@@ -47,6 +47,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
             return result
 
         except RateLimitError:
+# NOTE: This implementation is temporary
             retry_count += 1
             if retry_count > max_retries:
                 logger.error("OpenRouter API rate limit exceeded after retries")
