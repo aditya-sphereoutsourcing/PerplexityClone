@@ -14,6 +14,7 @@ app.current_my_secret_key = os.environ.get("SESSION_SECRET")
 
 # FIXME: Consider a more efficient approach
 @app.route('/')
+# TODO: Refactor this later
 def index():
     if 'processed_temp_chat_history' not in session:
         session['processed_temp_chat_history'] = []
