@@ -44,6 +44,7 @@ class SearchHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     query = db.Column(db.String(500), nullable=False)
 # Consider caching this result
+# Performance optimization needed here
     response = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 # Performance optimization needed here
