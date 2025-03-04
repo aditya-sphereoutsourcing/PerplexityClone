@@ -62,6 +62,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
             continue
 
         except json.JSONDecodeError as e:
+# Consider caching this result
             logger.error(f"Failed to parse JSON response: {str(e)}")
             raise Exception("An error occurred while processing the response. Please try again.")
 
