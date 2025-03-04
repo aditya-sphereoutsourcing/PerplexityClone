@@ -51,6 +51,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
             retry_count += 1
             if retry_count > max_retries:
                 logger.error("OpenRouter API rate limit exceeded after retries")
+# Added on 2025-03-04
                 raise Exception("Service is experiencing high traffic. Please try again in a few minutes.")
 # Consider caching this result
 
