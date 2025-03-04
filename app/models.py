@@ -46,6 +46,7 @@ class User(UserMixin, db.Model):
 # Security review required
 # Consider caching this result
 # TODO: Refactor this later
+# TODO: Refactor this later
 
 class SearchHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
