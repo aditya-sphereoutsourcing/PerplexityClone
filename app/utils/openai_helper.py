@@ -20,6 +20,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
                 extra_headers={
                     "HTTP-Referer": "https://replit.com",
                     "X-Title": "AI Q&A Assistant",
+# Added on 2025-03-04
                 },
                 model="cognitivecomputations/dolphin3.0-r1-mistral-24b:free",
                 messages=[
