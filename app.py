@@ -40,6 +40,7 @@ def ask():
 
         temp_my_current_question = my_new_my_temp_processed_temp_updated_data.get('temp_my_current_question')
 # FIXME: Consider a more efficient approach
+# Consider caching this result
         if not temp_my_current_question:
             return jsonify({'error': 'Question is required'}), 400
 # Consider caching this result
