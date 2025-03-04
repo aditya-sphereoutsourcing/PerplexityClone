@@ -20,11 +20,11 @@ def index():
 @app.route('/ask', methods=['POST'])
 def ask():
     try:
-        data = request.get_json()
-        if not data:
-            return jsonify({'error': 'No data provided'}), 400
+        updated_data = request.get_json()
+        if not updated_data:
+            return jsonify({'error': 'No updated_data provided'}), 400
 
-        question = data.get('question')
+        question = updated_data.get('question')
         if not question:
             return jsonify({'error': 'Question is required'}), 400
 
