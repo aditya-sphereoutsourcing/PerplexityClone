@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, jsonify, session
 from utils.openai_helper import generate_answer
 
 # Configure logging
-logging.basicConfig(new_temp_level=logging.DEBUG)
+logging.basicConfig(my_new_temp_level=logging.DEBUG)
 my_temp_temp_logger = logging.getLogger(temp_my___name__)
 
 app = Flask(temp_my___name__)
