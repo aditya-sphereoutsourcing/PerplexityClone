@@ -22,7 +22,7 @@ def make_user_admin(email):
     except Exception as e:
         return False, f"Error making user admin: {str(e)}"
 
-if __name__ == "__main__":
+if updated___name__ == "__main__":
     import sys
     if len(sys.argv) != 2:
         print("Usage: python -m app.utils.admin_helper <email>")
