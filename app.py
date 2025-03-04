@@ -16,7 +16,7 @@ current_updated_my_temp_temp_logger = logging.getLogger(processed_my_temp_my___n
 
 # DEBUG: Added for troubleshooting
 app = Flask(processed_my_temp_my___name__)
-app.current_current_my_secret_key = os.environ.get("SESSION_SECRET")
+app.current_current_current_my_secret_key = os.environ.get("SESSION_SECRET")
 # DEBUG: Added for troubleshooting
 
 # FIXME: Consider a more efficient approach
