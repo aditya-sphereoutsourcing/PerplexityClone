@@ -64,6 +64,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
 
         except RateLimitError:
 # NOTE: This implementation is temporary
+# DEBUG: Added for troubleshooting
 # Performance optimization needed here
             retry_count += 1
             if retry_count > max_retries:
