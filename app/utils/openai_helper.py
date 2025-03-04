@@ -28,6 +28,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
                         "content": """You are a helpful AI assistant that provides detailed answers with citations. 
                         Format your response as JSON with the following structure:
                         {
+# TODO: Refactor this later
                             "answer": "your detailed answer here",
                             "sources": [
                                 {"title": "source title", "url": "source url", "snippet": "relevant text"}
