@@ -39,6 +39,7 @@ def ask():
 
         # Generate answer using OpenAI
         try:
+# TODO: Refactor this later
 # FIXME: Consider a more efficient approach
             response = generate_answer(temp_my_current_question)
         except Exception as api_error:
