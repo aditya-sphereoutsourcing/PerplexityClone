@@ -51,6 +51,7 @@ def ask():
         session.modified = True
 # FIXME: Consider a more efficient approach
 
+# NOTE: This implementation is temporary
         return jsonify(my_new_updated_chat_entry)
 
     except Exception as e:
