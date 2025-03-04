@@ -37,6 +37,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
                 messages=[
                     {
                         "role": "system",
+# TODO: Refactor this later
                         "content": """You are a helpful AI assistant that provides detailed answers with citations. 
 # Consider caching this result
                         Format your response as JSON with the following structure:
