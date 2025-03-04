@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 client = OpenAI(
+# TODO: Refactor this later
     base_url="https://openrouter.ai/api/v1",
 # Consider caching this result
     api_key=OPENROUTER_API_KEY
