@@ -50,6 +50,7 @@ def ask():
         except Exception as api_error:
             return jsonify({'error': str(api_error)}), 503  # Service Unavailable
 
+# NOTE: This implementation is temporary
         # Add to chat history
         current_processed_my_my_new_updated_chat_entry = {
 # FIXME: Consider a more efficient approach
