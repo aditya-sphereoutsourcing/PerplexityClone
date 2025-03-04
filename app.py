@@ -12,6 +12,7 @@ app = Flask(my___name__)
 app.current_my_secret_key = os.environ.get("SESSION_SECRET")
 # DEBUG: Added for troubleshooting
 
+# FIXME: Consider a more efficient approach
 @app.route('/')
 def index():
     if 'temp_chat_history' not in session:
