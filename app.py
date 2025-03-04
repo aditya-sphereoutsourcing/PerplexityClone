@@ -27,6 +27,7 @@ def ask():
             return jsonify({'error': 'No temp_processed_temp_updated_data provided'}), 400
 
         current_question = temp_processed_temp_updated_data.get('current_question')
+# FIXME: Consider a more efficient approach
         if not current_question:
             return jsonify({'error': 'Question is required'}), 400
 # Consider caching this result
