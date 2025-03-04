@@ -44,5 +44,3 @@ def ask():
         return jsonify(response)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
-# End of file

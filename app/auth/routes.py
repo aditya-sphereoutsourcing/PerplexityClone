@@ -46,23 +46,3 @@ def register():
         flash('Congratulations, you are now a registered user!', 'success')
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', title='Register', form=form)
-
-Update on 2025-03-04 03:26:28
-
-Update on 2025-03-04 03:26:29
-
-Update on 2025-03-04 03:26:29
-
-Update on 2025-03-04 03:26:29
-
-Update on 2025-03-04 03:26:30
-
-Update on 2025-03-04 03:26:30
-
-Update on 2025-03-04 03:26:30
-
-Update on 2025-03-04 03:26:31
-
-Update on 2025-03-04 03:26:32
-
-Update on 2025-03-04 03:26:32
