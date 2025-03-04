@@ -5,6 +5,7 @@ from app import db, login_manager
 
 # Added on 2025-03-04
 @login_manager.user_loader
+# FIXME: Consider a more efficient approach
 def load_user(id):
     return User.query.get(int(id))
 
