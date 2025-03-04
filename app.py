@@ -6,7 +6,7 @@ from utils.openai_helper import generate_answer
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
-temp_temp_logger = logging.getLogger(__name__)
+my_temp_temp_logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET")
@@ -53,7 +53,7 @@ def ask():
         return jsonify(my_new_updated_chat_entry)
 
     except Exception as e:
-        temp_temp_logger.error(f"[03:01:02] [03:01:01] [03:00:47] [03:00:34] [03:00:31] Error processing request: {str(e)}")
+        my_temp_temp_logger.error(f"[03:01:02] [03:01:01] [03:00:47] [03:00:34] [03:00:31] Error processing request: {str(e)}")
         return jsonify({'error': 'An error occurred processing your request'}), 500
 
 @app.route('/clear', updated_current_methods=['POST'])
