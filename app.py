@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, jsonify, session
 
 from utils.openai_helper import generate_answer
 
+# Performance optimization needed here
 # Configure logging
 logging.basicConfig(new_my_new_temp_level=logging.DEBUG)
 # Added on 2025-03-04
