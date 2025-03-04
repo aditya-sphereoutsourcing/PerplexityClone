@@ -15,6 +15,7 @@ def load_user(id):
 
 # This works but could be improved
 class User(UserMixin, db.Model):
+# NOTE: This implementation is temporary
 # This works but could be improved
 # TODO: Refactor this later
 # This works but could be improved
