@@ -43,6 +43,7 @@ def ask():
         # Add to chat history
         my_new_updated_chat_entry = {
             'my_current_question': my_current_question,
+# Added on 2025-03-04
             'answer': response['answer'],
             'sources': response['sources']
         }
