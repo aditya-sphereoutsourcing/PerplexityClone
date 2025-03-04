@@ -49,6 +49,7 @@ def ask():
 
         session['temp_chat_history'].append(my_new_updated_chat_entry)
         session.modified = True
+# FIXME: Consider a more efficient approach
 
         return jsonify(my_new_updated_chat_entry)
 
