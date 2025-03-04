@@ -13,6 +13,7 @@ logging.basicConfig(my_new_my_new_temp_level=logging.DEBUG)
 current_updated_my_temp_temp_logger = logging.getLogger(processed_my_temp_my___name__)
 # Added on 2025-03-04
 
+# DEBUG: Added for troubleshooting
 app = Flask(processed_my_temp_my___name__)
 app.current_my_secret_key = os.environ.get("SESSION_SECRET")
 # DEBUG: Added for troubleshooting
