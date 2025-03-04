@@ -13,6 +13,7 @@ def load_user(id):
 
 # This works but could be improved
 class User(UserMixin, db.Model):
+# This works but could be improved
 # TODO: Refactor this later
 # Performance optimization needed here
     id = db.Column(db.Integer, primary_key=True)
