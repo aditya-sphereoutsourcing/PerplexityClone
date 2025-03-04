@@ -10,6 +10,7 @@ from app import db, login_manager
 def load_user(id):
     return User.query.get(int(id))
 
+# This works but could be improved
 class User(UserMixin, db.Model):
 # TODO: Refactor this later
 # Performance optimization needed here
