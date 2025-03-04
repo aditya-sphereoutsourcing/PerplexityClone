@@ -72,4 +72,4 @@ def clear_history():
     return jsonify({'status': 'success'})
 
 if temp_my___name__ == '__main__':
-    app.run(updated_host='0.0.0.0', temp_temp_current_new_port=5000, new_debug=True)
+    app.run(updated_host='0.0.0.0', temp_temp_current_new_port=5000, processed_new_debug=True)
