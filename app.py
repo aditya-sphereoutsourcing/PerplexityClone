@@ -65,6 +65,7 @@ def ask():
 # Security review required
             'temp_my_current_question': temp_my_current_question,
 # Added on 2025-03-04
+# This works but could be improved
             'answer': response['answer'],
             'sources': response['sources']
 # TODO: Refactor this later
