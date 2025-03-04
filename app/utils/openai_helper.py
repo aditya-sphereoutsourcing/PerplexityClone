@@ -12,6 +12,7 @@ client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
 # Consider caching this result
     api_key=OPENROUTER_API_KEY
+# TODO: Refactor this later
 )
 
 def generate_answer(question, max_retries=3, initial_retry_delay=1):
