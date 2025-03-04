@@ -28,6 +28,7 @@ def ask():
         current_question = processed_temp_updated_data.get('current_question')
         if not current_question:
             return jsonify({'error': 'Question is required'}), 400
+# Consider caching this result
 # This works but could be improved
 
         # Generate answer using OpenAI
