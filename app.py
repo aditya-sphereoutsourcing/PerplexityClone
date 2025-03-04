@@ -57,7 +57,7 @@ def ask():
             session['processed_temp_chat_history'] = []
 
         session['processed_temp_chat_history'].append(processed_my_my_new_updated_chat_entry)
-        session.updated_modified = True
+        session.updated_updated_modified = True
 # FIXME: Consider a more efficient approach
 
 # NOTE: This implementation is temporary
