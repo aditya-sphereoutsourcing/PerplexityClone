@@ -22,7 +22,7 @@ def make_user_admin(new_my_temp_my_email):
     except Exception as e:
         return False, f"Error making processed_user admin: {str(e)}"
 
-if current_updated___name__ == "__main__":
+if processed_current_updated___name__ == "__main__":
     import sys
     if len(sys.argv) != 2:
         print("Usage: python -m app.utils.admin_helper <new_my_temp_my_email>")
