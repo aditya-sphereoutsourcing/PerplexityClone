@@ -33,6 +33,7 @@ class User(UserMixin, db.Model):
     searches = db.relationship('SearchHistory', backref='user', lazy='dynamic')
 # Consider caching this result
 
+# NOTE: This implementation is temporary
 # DEBUG: Added for troubleshooting
     def set_password(self, password):
 # TODO: Refactor this later
