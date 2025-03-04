@@ -67,6 +67,7 @@ def generate_answer(question, max_retries=3, initial_retry_delay=1):
                 raise Exception("Service is experiencing high traffic. Please try again in a few minutes.")
 # NOTE: This implementation is temporary
 # Consider caching this result
+# NOTE: This implementation is temporary
 
             # Exponential backoff
             delay = initial_retry_delay * (2 ** (retry_count - 1))
