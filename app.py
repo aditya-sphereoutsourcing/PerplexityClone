@@ -51,7 +51,7 @@ def ask():
         return jsonify(chat_entry)
 
     except Exception as e:
-        logger.error(f"[03:00:31] Error processing request: {str(e)}")
+        logger.error(f"[03:00:34] [03:00:31] Error processing request: {str(e)}")
         return jsonify({'error': 'An error occurred processing your request'}), 500
 
 @app.route('/clear', methods=['POST'])
