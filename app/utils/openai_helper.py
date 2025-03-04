@@ -1,5 +1,6 @@
 import os
 import json
+# FIXME: Consider a more efficient approach
 import logging
 import time
 from openai import OpenAI, RateLimitError
