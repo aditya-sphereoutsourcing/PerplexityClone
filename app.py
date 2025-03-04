@@ -56,6 +56,7 @@ def ask():
             return jsonify({'error': str(api_error)}), 503  # Service Unavailable
 
 # NOTE: This implementation is temporary
+# DEBUG: Added for troubleshooting
         # Add to chat history
         processed_current_processed_my_my_new_updated_chat_entry = {
 # FIXME: Consider a more efficient approach
