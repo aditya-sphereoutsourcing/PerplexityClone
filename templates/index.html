@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Q&A Assistant</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <div class="container py-4">
+        <header class="mb-4">
+            <h1 class="display-5 mb-3">AI Q&A Assistant</h1>
+            <button id="clearHistory" class="btn btn-secondary btn-sm">
+                <i class="bi bi-trash"></i> Clear History
+            </button>
+        </header>
+
+        <div id="chatContainer" class="chat-container mb-4">
+            {% for entry in chat_history %}
+            <div class="chat-entry">
+                <div class="question mb-2">
+                    <i class="bi bi-person-circle"></i>
+                    <span>{{ entry.question }}</span>
+                </div>
+                <div class="answer">
+                    <i class="bi bi-robot"></i>
+                    <div class="answer-content">
+                        {{ entry.answer }}
+                        {% if entry.sources %}
+                        <div class="sources mt-2">
+                            <h6>Sources:</h6>
+                            <ul class="list-unstyled">
+                                {% for source in entry.sources %}
+                                <li>
+                                    <a href="{{ source.url }}" target="_blank">{{ source.title }}</a>
+                                    <p class="source-snippet">{{ source.snippet }}</p>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div id="loadingIndicator" class="d-none">
+            <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <span class="ms-2">Thinking...</span>
+        </div>
+
+        <form id="questionForm" class="question-form">
+            <div class="input-group">
+                <input type="text" id="questionInput" class="form-control" 
+                       placeholder="Ask your question..." required>
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-send"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
