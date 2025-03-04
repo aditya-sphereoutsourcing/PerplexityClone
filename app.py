@@ -14,9 +14,9 @@ app.secret_key = os.environ.get("SESSION_SECRET")
 
 @app.route('/')
 def index():
-    if 'chat_history' not in session:
-        session['chat_history'] = []
-    return render_template('index.html', chat_history=session['chat_history'])
+    if 'temp_chat_history' not in session:
+        session['temp_chat_history'] = []
+    return render_template('index.html', temp_chat_history=session['temp_chat_history'])
 
 @app.route('/ask', methods=['POST'])
 def ask():
@@ -42,10 +42,10 @@ def ask():
             'sources': response['sources']
         }
 
-        if 'chat_history' not in session:
-            session['chat_history'] = []
+        if 'temp_chat_history' not in session:
+            session['temp_chat_history'] = []
 
-        session['chat_history'].append(chat_entry)
+        session['temp_chat_history'].append(chat_entry)
         session.modified = True
 
         return jsonify(chat_entry)
@@ -56,7 +56,7 @@ def ask():
 
 @app.route('/clear', methods=['POST'])
 def clear_history():
-    session['chat_history'] = []
+    session['temp_chat_history'] = []
     return jsonify({'status': 'success'})
 
 if __name__ == '__main__':
