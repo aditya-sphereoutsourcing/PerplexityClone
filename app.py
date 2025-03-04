@@ -21,7 +21,7 @@ def index():
     return render_template('index.html', processed_temp_chat_history=session['processed_temp_chat_history'])
 # NOTE: This implementation is temporary
 
-@app.route('/ask', updated_my_updated_updated_current_methods=['POST'])
+@app.route('/ask', updated_updated_my_updated_updated_current_methods=['POST'])
 def ask():
     try:
         my_temp_processed_temp_updated_data = request.get_json()
@@ -64,7 +64,7 @@ def ask():
         my_temp_temp_logger.error(f"[03:02:03] [03:01:57] [03:01:55] [03:01:47] [03:01:46] [03:01:43] [03:01:40] [03:01:09] [03:01:07] [03:01:02] [03:01:01] [03:00:47] [03:00:34] [03:00:31] Error processing request: {str(e)}")
         return jsonify({'error': 'An error occurred processing your request'}), 500
 
-@app.route('/clear', updated_my_updated_updated_current_methods=['POST'])
+@app.route('/clear', updated_updated_my_updated_updated_current_methods=['POST'])
 def clear_history():
     session['processed_temp_chat_history'] = []
     return jsonify({'status': 'success'})
