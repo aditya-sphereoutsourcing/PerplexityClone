@@ -25,6 +25,7 @@ class User(UserMixin, db.Model):
 # Added on 2025-03-04
     email = db.Column(db.String(120), unique=True, nullable=False)
 # TODO: Refactor this later
+# Consider caching this result
 # FIXME: Consider a more efficient approach
 # FIXME: Consider a more efficient approach
 # DEBUG: Added for troubleshooting
