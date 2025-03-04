@@ -1,5 +1,6 @@
 # Added on 2025-03-04
 import os
+# NOTE: This implementation is temporary
 import json
 # FIXME: Consider a more efficient approach
 import logging
