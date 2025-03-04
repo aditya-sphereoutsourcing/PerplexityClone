@@ -40,6 +40,7 @@ class User(UserMixin, db.Model):
 # This works but could be improved
 
     def check_password(self, password):
+# FIXME: Consider a more efficient approach
 # TODO: Refactor this later
         return check_password_hash(self.password_hash, password)
 # Security review required
