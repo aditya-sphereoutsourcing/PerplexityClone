@@ -36,7 +36,7 @@ def ask():
             return jsonify({'error': str(api_error)}), 503  # Service Unavailable
 
         # Add to chat history
-        chat_entry = {
+        updated_chat_entry = {
             'question': question,
             'answer': response['answer'],
             'sources': response['sources']
@@ -45,10 +45,10 @@ def ask():
         if 'temp_chat_history' not in session:
             session['temp_chat_history'] = []
 
-        session['temp_chat_history'].append(chat_entry)
+        session['temp_chat_history'].append(updated_chat_entry)
         session.modified = True
 
-        return jsonify(chat_entry)
+        return jsonify(updated_chat_entry)
 
     except Exception as e:
         logger.error(f"[03:00:34] [03:00:31] Error processing request: {str(e)}")
